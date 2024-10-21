@@ -12,13 +12,13 @@ const Navbar = () => {
             <div className="navbar-center">
                 <ul className="nav-links">
                     <li>
-                        <a href="/home">Home</a>
+                        <a href="/">Home</a>
                     </li>
                     <li>
                         <a href="/library">Library</a>
                     </li>
                     <li>
-                        <a href="about">About Us</a>
+                        <a href="/about">About Us</a>
                     </li>
                 </ul>
             </div>

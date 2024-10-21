@@ -10,6 +10,20 @@
     justify-content: flex-start;
     align-items: center;
     padding: 20px;
+
+    opacity: 0; /* Start with invisible */
+    animation: fadeIn 2s ease-in forwards; /* Apply fade-in animation */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Optional: Move bookshelf up */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Return to original position */
+    }
 }
 
 p{
@@ -19,7 +33,7 @@ p{
 
 
 .shelf {
-    width: 700px;
+    width: 70%;
     height: 20px;
     background-color: #2d1a19;
     position: relative;
@@ -31,20 +45,25 @@ p{
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.book:hover {
-    transform: scale(1.1);
+.sign-up:hover,
+.log-in:hover,
+.about:hover {
+    /* transform: scale(1.5); */
+    height:110px;
+    width:75px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .book {
-    width: 30px;
+    width: 3.5%;
     height: 80px;
     background-color: #8b5e3c;
     border-radius: 3px;
     box-shadow: 0 2px 5px #412722;
     position: relative;
     bottom: 20px;
-    margin: 0 -120px;
+    margin: 0 -20%;
+    box-shadow: 20px 0px 5px rgba(0, 0, 0, 0.3);
 } 
 
 .book1 {
@@ -60,4 +79,22 @@ p{
 .book3 {
     height: 60px;
     background-color: #a86e52;
+}
+
+
+.sign-up,
+.log-in,
+.about{
+    background-color: #5d462a;
+    height: 90px;
+    width: 65px;
+    text-align: center;
+    border: 2px solid #5d462a;
+    color:#FDF0D5;
+    
+}
+
+.book svg {
+    font-size: 40px; /* Set the icon size */
+    margin-top: 20px;
 }

@@ -4,9 +4,9 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color:#FDF0D5;
-  background-color: #FDF0D5;
-
+  color:#fde5d5;
+  background-color: #341c06;
+  background: linear-gradient(180deg, #341c06, #693a18);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
