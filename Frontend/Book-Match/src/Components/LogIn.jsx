@@ -1,5 +1,6 @@
 import React from 'react';
 import "./Login.css";
+import MatchLogo from "./Logo/BookMatch.png";
 
 const LogIn = () => {
     return (
@@ -8,7 +9,7 @@ const LogIn = () => {
         //     <p>This is the page content</p>
         // </div>
 
-        <>
+        <> <div className = "container">
             <div className="LoginBox">
                 <h3>Welcome Back</h3>
                 <h4>Please enter your details</h4>
@@ -20,9 +21,15 @@ const LogIn = () => {
                     <input type="text" id="pword" name="pword" />
                 </form>
             </div>
-            
+
             <div className="logo">
-            </div></>
+                <img src={MatchLogo} alt="BookMatch Logo" />
+            </div>
+            
+        </div>
+        
+            
+            </>
     );  
 };
 
