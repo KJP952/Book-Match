@@ -24,7 +24,7 @@ const LogIn = () => {
                             <label htmlFor="pword" className="form__label">Password</label>
                         </div>
                     </form>
-                    <button type="button">Log In</button>
+                    <button type="button" class="login-button">Log In</button>
                     </div>
                 </div>
                     <div className="logo">
