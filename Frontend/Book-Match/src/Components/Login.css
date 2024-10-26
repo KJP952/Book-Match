@@ -1,20 +1,122 @@
+.background {
+    height: 100vh;
+}
+
 .LoginBox{
     width: 50%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    border: 5px solid black ;
-    margin-top: 50px;
+    margin-top: 60px;
+}
+
+.login-container{
+    text-align: center;
+    line-height: 0.5;
+    margin-top:-50px;
 }
 
 .container{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid black;
+    height: 500px;
+    width: 1000px;
+    margin-top: 100px;
+    margin-left: 10%;
+    background-color: #341c06;
+
+    opacity: 0;
+    animation: fadeIn 2s forwards;
 }
 
-form{
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo{
     display: flex;
     justify-content: center;
-    flex-direction: column;
+}
+
+.form-group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 0px;
+    width: 50%;
+}
+
+button{
+    background-color: #FDF0D5;
+    font-size: 20px;
+    color:#341c06;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.form__field {
+    font-family: inherit;
+    width: 200%;
+    border: 0;
+    border-bottom: 2px solid #FDF0D5;
+    outline: 0;
+    font-size: 1.3rem;
+    color: white;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+
+    &::placeholder {
+        color: transparent;
+    }
+
+    &:placeholder-shown ~ .form__label {
+        font-size: 1.3rem;
+        cursor: text;
+        top: 20px;
+    }
+}
+
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #FDF0D5;
+}
+
+.form__field:focus {
+    ~ .form__label {
+        position: absolute;
+        top: 0;
+        display: block;
+        transition: 0.2s;
+        font-size: 1rem;
+        color: #FDF0D5;
+        font-weight: 700;    
+    }
+    padding-bottom: 6px;  
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #FDF0D5, #FDF0D5);
+    border-image-slice: 1;
+}
+
+.form__field {
+    &:required,&:invalid { box-shadow: none; }
 }

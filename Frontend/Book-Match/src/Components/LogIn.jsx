@@ -4,32 +4,34 @@ import MatchLogo from "./Logo/BookMatch.png";
 
 const LogIn = () => {
     return (
-        // <div>
-        //     <h1>Log In Page</h1>
-        //     <p>This is the page content</p>
-        // </div>
+        <> 
+        <div className ="background">
+            <div className = "container">
+                <div className="LoginBox">
+                    <div className="login-container">
+                        <h1>Welcome Back</h1>
+                        <h4>Please enter your details</h4>
+                    </div>
 
-        <> <div className = "container">
-            <div className="LoginBox">
-                <h3>Welcome Back</h3>
-                <h4>Please enter your details</h4>
-
-                <form>
-                    <label for="eadress">Email Adress</label>
-                    <input type="text" id="eadress" name="eadress" />
-                    <label for="pword">Password</label>
-                    <input type="text" id="pword" name="pword" />
-                </form>
+                    <div className="detail-container">
+                    <form>
+                        <div className="form-group">
+                            <input type="text" id="eadress" name="eadress" className="form__field" required />
+                            <label htmlFor="eadress" className="form__label">Email Address</label>
+                        </div>
+                        <div className="form-group">
+                            <input type="password" id="pword" name="pword" className="form__field" required />
+                            <label htmlFor="pword" className="form__label">Password</label>
+                        </div>
+                    </form>
+                    <button type="button">Log In</button>
+                    </div>
+                </div>
+                    <div className="logo">
+                        <img src={MatchLogo} alt="BookMatch Logo" />
+                    </div>
             </div>
-
-            <div className="logo">
-                <img src={MatchLogo} alt="BookMatch Logo" />
-            </div>
-            
-        </div>
-        
-            
-            </>
+        </div></>
     );  
 };
 
