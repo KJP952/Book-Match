@@ -24,12 +24,11 @@
     align-items: center;
 
     border: 1px solid black;
-    height: 500px;
-    width: 1000px;
+    height: 50vh;
+    width: 50vw;
     margin-top: 100px;
-    margin-left: 10%;
     background-color: #341c06;
-
+    margin-left: 25%;
     opacity: 0;
     animation: fadeIn 2s forwards;
 }
@@ -48,6 +47,7 @@
 .logo{
     display: flex;
     justify-content: center;
+    height: 50vh;
 }
 
 .form-group {
