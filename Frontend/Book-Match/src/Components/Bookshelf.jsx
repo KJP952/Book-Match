@@ -8,6 +8,7 @@ import './BookShelf.css';
 const BookShelf = () => {
     const navigate = useNavigate();
     return (
+        <div className="background">
         <div className="book-shelf">
             <div className="greeting">
                 <h1>Welcome to BookMatch</h1>
@@ -80,6 +81,7 @@ const BookShelf = () => {
                 <div className="book book3"></div>
             </div>
         </div>
+    </div>
     );
 };
 
