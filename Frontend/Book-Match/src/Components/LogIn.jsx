@@ -1,11 +1,65 @@
 import React from 'react';
-import "./Login.css";
+// import "./Login.css";
 import MatchLogo from "./Logo/BookMatch.png";
+import { useState } from 'react';
 
 const LogIn = () => {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [message, setMessage] = useState('');
+
+    const handleLogin = async () => {
+    try {
+        const response = await fetch('http://localhost:8080/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ username, password }),
+        });
+  
+        if (response.ok) {
+          const data = await response.json();
+          console.log('Login successful:', data);
+          setMessage('Login successful!');
+  
+          // Store the JWT token in localStorage or cookies
+        //   localStorage.setItem('token', data.token);
+  
+          // Redirect or perform post-login actions
+          window.location.href = "/"; // Example redirection
+        } else {
+          const error = await response.json();
+          console.error('Login failed:', error);
+          setMessage(error.message || 'Login failed. Please check your credentials.');
+        }
+      } catch (error) {
+        console.error('Network Error:', error);
+        setMessage('An error occurred. Please try again.');
+      }
+    };
+
     return (
         <> 
-        <div className ="background">
+        <div>
+      <h1>Login</h1>
+      <input
+        type="text"
+        placeholder="Username"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <button onClick={handleLogin}>Log In</button>
+      {message && <p>{message}</p>}
+    </div>
+
+        {/* <div className ="background">
             <div className = "container">
                 <div className="LoginBox">
                     <div className="login-container">
@@ -31,7 +85,8 @@ const LogIn = () => {
                         <img src={MatchLogo} alt="BookMatch Logo" />
                     </div>
             </div>
-        </div></>
+        </div> */}
+        </>
     );  
 };
 
