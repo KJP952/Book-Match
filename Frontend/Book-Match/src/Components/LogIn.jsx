@@ -1,5 +1,5 @@
 import React from 'react';
-// import "./Login.css";
+import "./Login.css";
 import MatchLogo from "./Logo/BookMatch.png";
 import { useState } from 'react';
 
@@ -41,51 +41,58 @@ const LogIn = () => {
 
     return (
         <> 
-        <div>
-      <h1>Login</h1>
-      <input
-        type="text"
-        placeholder="Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button onClick={handleLogin}>Log In</button>
-      {message && <p>{message}</p>}
-    </div>
+        <div className="background">
+      <div className="container">
+        <div className="LoginBox">
+          <div className="login-container">
+            <h1>Welcome Back</h1>
+            <h4>Please enter your details</h4>
+          </div>
 
-        {/* <div className ="background">
-            <div className = "container">
-                <div className="LoginBox">
-                    <div className="login-container">
-                        <h1>Welcome Back</h1>
-                        <h4>Please enter your details</h4>
-                    </div>
-
-                    <div className="detail-container">
-                    <form>
-                        <div className="form-group">
-                            <input type="text" id="eadress" name="eadress" className="form__field" required />
-                            <label htmlFor="eadress" className="form__label">Email Address</label>
-                        </div>
-                        <div className="form-group">
-                            <input type="password" id="pword" name="pword" className="form__field" required />
-                            <label htmlFor="pword" className="form__label">Password</label>
-                        </div>
-                    </form>
-                    <button type="button">Log In</button>
-                    </div>
-                </div>
-                    <div className="logo">
-                        <img src={MatchLogo} alt="BookMatch Logo" />
-                    </div>
+          <div className="detail-container">
+            <form onSubmit={(e) => e.preventDefault()}>
+              <div className="form-group">
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  className="form__field"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  required
+                />
+                <label htmlFor="username" className="form__label">
+                  Username
+                </label>
+              </div>
+              <div className="form-group">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  className="form__field"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+                <label htmlFor="password" className="form__label">
+                  Password
+                </label>
+              </div>
+              <button type="button" onClick={handleLogin}>
+                Log In
+              </button>
+            </form>
+            <div className="loginMessage">
+            {message && <p className="error-message">{message}</p>}
             </div>
-        </div> */}
+          </div>
+        </div>
+        <div className="logo">
+          <img src={MatchLogo} alt="BookMatch Logo" />
+        </div>
+      </div>
+    </div>
         </>
     );  
 };
